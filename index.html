@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+
+        <button @click="addItem">Add Here</button>
+        {{clicked}} and {{iClicked}}
+    </div>
+
+    <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                    message: "I have been Vued",
+                    clicked:0
+                },
+                methods: {
+                    addItem: function(){
+                        this.clicked++
+                    }
+                },
+                computed:{
+                    iClicked: function(){
+                        return this.clicked * 2
+                    }
+                }
+            })    
+    </script>
+
+</body>
+</html>

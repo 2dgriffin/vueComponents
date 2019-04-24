@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+
+    
+    <div id="app">
+        <card 
+        image="dolphin1.jpg"
+        name="John"
+        place="France"
+        describe="John likes long walks on the beach"
+        >
+
+        </card>
+
+        <card 
+        image="dolphin2.jpg"
+        name="Tina"
+        place="Missouri"
+        describe="Tina really enjoys staying in the same place"
+        >
+
+        </card>
+
+        <card 
+        image="dolphin3.jpg"
+        name="Joe"
+        place="Mexico"
+        describe="Joe thinks dolphins are the coolest"
+        >
+
+        </card>
+    </div>
+
+    <script>
+
+        // Vue.component('butt', {
+        //     props: ['butname', 'butage'],
+        //     template: `<button @click='count++'> {{butname}} was clicked {{count}} times. {{butage}} Years Old </button>`,
+        //     data:function(){
+        //         return{
+        //             count:0
+        //         }
+        //     }
+        // })
+
+        Vue.component('card', {
+            props: ['image', 'name', 'place', 'describe'],
+            template: `<div class="card" style="width: 18rem;">
+                            <img v-bind:src="image" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">This is {{name}}'s card </h5>
+                                <p class="card-text">{{describe}}</p>
+                                <a href="#" class="btn btn-primary">Go to {{place}}</a>
+                            </div>
+                        </div>`,
+        });
+
+        var app = new Vue({
+                el: "#app",
+                data: {
+                    message: "Again?"
+                }
+            })    
+
+    </script>
+</body>
+</html>
